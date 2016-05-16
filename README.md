@@ -1,5 +1,5 @@
-# scoreboard
-A scoreboard for the mobile app game.
+# Leaderboard
+Show the highest scores for the mobile game for the Summit Keynote.
 
 Installation:
 
