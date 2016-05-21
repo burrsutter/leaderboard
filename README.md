@@ -4,7 +4,7 @@ Show the highest scores for the mobile game for the Summit Keynote.
 Installation:
 
 ```
-cd scoreboard/
+cd leaderboard/
 npm install
 ```
 
