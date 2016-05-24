@@ -57,7 +57,7 @@ h1{
 }
 
 small, sup{
-  font-size: .6em;
+  font-size: .4em;
   text-transform: uppercase;
   font-weight: $font-weight-light;
   line-height: 1em;
@@ -76,6 +76,7 @@ sup{
   z-index: 1;
   position: relative;
   > li{
+    will-change: position;
     transition: .5s ease all;
     border-radius: 4px;
     background: rgba(0,0,0,.2);
