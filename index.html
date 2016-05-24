@@ -5,50 +5,422 @@
   <title>Scoreboard</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
   <link rel="stylesheet" href="build/styles.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
 
-  <ul id="scoreboard" class="scoreboard">
-    <li><span id="team-score-1"></span> POINTS</li>
-    <li><span id="team-score-2"></span> POINTS</li>
-    <li><span id="team-score-3"></span> POINTS</li>
-    <li><span id="team-score-4"></span> POINTS</li>
-  </ul>
 
-  <div class="container">
-    <div class="container-mask"></div><!-- mask -->
-    <div id="team-1" class="score" style="transform: translateY(80%)">
-      <div class="score-details">
-        <h1>Orange Team</h1>
-        <h2 id="rank-team-1"></h2>
+<ol class="leaderboard">
+  <li class="position-1">
+    <div class="leaderboard-position">
+      1<sup>st</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Mercury Slice
+      </div>
+      <div class="leaderboard-points">
+        2729 <small>points</small>
       </div>
     </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
 
-    <div id="team-2" class="score"  style="transform: translateY(80%)">
-      <div class="score-details">
-        <h1>Teal Team</h1>
-        <h2 id="rank-team-2"></h2>
+
+  <li class="position-2">
+    <div class="leaderboard-position">
+      2<sup>nd</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Platinum Serrano
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
       </div>
     </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
 
-    <div id="team-3" class="score"  style="transform: translateY(80%)">
-      <div class="score-details">
-        <h1>Violet Team</h1>
-        <h2 id="rank-team-3"></h2>
+
+  <li class="position-3">
+    <div class="leaderboard-position">
+      3<sup>rd</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Brass Cannon
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
       </div>
     </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
 
-    <div id="team-4" class="score"  style="transform: translateY(80%)">
-      <div class="score-details">
-        <h1>Green Team</h1>
-        <h2 id="rank-team-4"></h2>
+
+  <li class="position-4">
+    <div class="leaderboard-position">
+      4<sup>th</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Zinc Purple
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
       </div>
     </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
 
 
-  </div><!-- /container -->
+  <li class="position-5">
+    <div class="leaderboard-position">
+      5<sup>th</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Viper Companion
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
+      </div>
+    </div>
+    <ul class="leaderboard-achievement">
+      <li class="off">
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
 
-  <script src="build/bundle.js"></script>
+
+  <li class="position-6">
+    <div class="leaderboard-position">
+      6<sup>th</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Rattlesnake Argyle
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
+      </div>
+    </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
+
+
+  <li class="position-7">
+    <div class="leaderboard-position">
+      7<sup>th</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Teg Dyne
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
+      </div>
+    </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
+
+
+  <li class="position-8">
+    <div class="leaderboard-position">
+      8<sup>th</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Grilse Rod
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
+      </div>
+    </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
+
+
+  <li class="position-9">
+    <div class="leaderboard-position">
+      9<sup>th</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Chuckwalla Thirdendeal
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
+      </div>
+    </div>
+    <ul class="leaderboard-achievement">
+      <li>
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
+
+  <li class="position-10">
+    <div class="leaderboard-position">
+      10<sup>th</sup>
+    </div>
+    <div class="leaderboard-details">
+      <div class="leaderboard-name">
+        Yelt Photon
+      </div>
+      <div class="leaderboard-points">
+        1929 <small>points</small>
+      </div>
+    </div>
+    <ul class="leaderboard-achievement">
+      <li class="off">
+        <i class="material-icons">sentiment_very_satisfied</i>
+        <div class="legend">
+          <strong>10</strong> consecutive points
+        </div>
+      </li>
+      <li>
+        <i class="material-icons">local_play</i>
+        <div class="legend">
+          <strong>50</strong> consecutive points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">whatshot</i>
+        <div class="legend">
+          <strong>100</strong> points
+        </div>
+      </li>
+      <li class="off">
+        <i class="material-icons">local_pizza</i>
+        <div class="legend">
+          <strong>500</strong> points
+        </div>
+      </li>
+    </ul>
+  </li>
+
+</ol>
+
 
 </body>
 </html>

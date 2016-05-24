@@ -1,6 +1,5 @@
-// TODO Separar lo que es general de lo ques particular del demo
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,800,300);
 
 $color-background:          #002235;
 $color-background-env:      #002a42;
@@ -22,15 +21,23 @@ $color-violet-dark:         #582fc0;
 $font-weight-light:         300;
 $font-weight-normal:        400;
 $font-weight-bold:          600;
+$font-weight-extra-bold:    800;
 $font-size-base:            12px;
 $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+@keyframes hoverboard-glow{
+  to{
+    filter: opacity(.7);
+  }
+}
 
 html{
   height: 100%;
 }
 
 body{
-  background-image: radial-gradient(55% 20% at top, lighten($color-background, 8%), $color-background 100%);
+  background-image: radial-gradient(55% 90% at top, lighten($color-background, 8%), $color-background 100%);
   background-position: top center;
   background-color: $color-background;
   color: $color-text;
@@ -39,298 +46,111 @@ body{
   font-size: $font-size-base;
   margin: 0;
   height: 100%;
-  overflow: hidden;
-}
-
-.scoreboard{
-  position: absolute;
-  list-style: none;
-  padding: 0;
-  display: flex;
-  width: calc(100vw - 32%);
-  margin: 0 16%;
-  filter: opacity(1);
-  li{
-    flex: 1 0 20%;
-    border-width: 1px;
-    border-style: solid;
-    border-color: rgba(0,0,0,.5);
-    margin: 40px 10px 0 10px;
-    padding-bottom: 10px;
-    border-radius: 4px;
-    text-align: center;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
-    box-shadow: 0 3px 10px -5px rgba(0,0,0,.5);
-    strong{
-      font-size: $font-size-base * 3.4;
-      display: block;
-    }
-    &:nth-of-type(1){
-      color: $color-orange;
-      border-color: $color-orange-dark;
-    }
-    &:nth-of-type(2){
-      color: $color-teal;
-      border-color: $color-teal-dark;
-    }
-    &:nth-of-type(3){
-      color: $color-violet;
-      border-color: $color-violet-dark;
-    }
-    &:nth-of-type(4){
-      color: $color-green;
-      border-color: $color-green-dark;
-    }
-  }
-}
-
-@keyframes bg-move{
-  to{
-  transform: translate3d(0, 20px, 0)
-  }
-}
-
-@keyframes bg-move-two{
-  to{
-    transform: translate3d(0, 20%, 0)
-  }
-}
-
-.container-mask{
-  background-image:
-      linear-gradient(to left, $color-background, transparent 20%),
-      linear-gradient(to right, $color-background, transparent 20%),
-      linear-gradient($color-background, transparent 80%);
-  position: absolute;
-  top:0;
-  left:0;
-  bottom: 0;
-  right: 0;
-  z-index: 0;
-}
-
-.container{
-  transform: perspective(100em) rotate3d(1, 0, 0, 40deg) scale3d(1.2, 1.8, 1);
-  transform-origin: 50% 100%;
-//  margin: 0px 30px;
-//  overflow: hidden;
-  height: 100%;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: stretch;
-  &:before{
-    content: "";
-    animation: bg-move-two .8s linear infinite;
-    position: absolute;
-    height: 100%;
-    left:0;
-    right: 0;
-    z-index: -1;
-    background-image:
-      linear-gradient(to bottom, $color-blue-dark, $color-blue-dark 1px, transparent 1px),
-      linear-gradient(to bottom, transparent, transparent 8px, rgba(0,0,0,.5) 8px, rgba(0,0,0,.5) 9px, transparent 9px);
-    background-size: 100% 20%, 100% 20%;
 }
 
-  &:after{
-    content: "";
-    animation: bg-move .2s linear infinite;
-    position: absolute;
-    height: 100%;
-    left:0;
-    right: 0;
-    z-index: -2;
-    background:
-      linear-gradient($color-background  18px, transparent 18px) 0 -2px,
-      linear-gradient(90deg, $color-background 18px, transparent 0px) -2px 0;
-    background-color: $color-blue-dark;
-    background-size: 20px 20px, 20px 20px;
-  }
-}
-
-
-@mixin color-settings($start-color, $end-color) {
-  &:after{
-    background-image: linear-gradient($end-color, $start-color);
-  }
-  .score-porcentage{
-    border-top-color: $end-color;
-    span{
-      background: $end-color;
-      color: $start-color;
-    }
-  }
-  .score-details{
-    h1, h2{
-      background: $end-color;
-      color: $start-color;
-    }
-    h2{
-      border-color: $color-background;
-    }
-    h1{
-      background: $start-color;
-      color: $end-color;
-      border-bottom: 2px solid $end-color;
-      border-top: 10px solid $end-color;
-    }
-  }
-}
-
-@keyframes hoverboard-shadow{
-  from{
-    filter:drop-shadow(0 20px 5px rgba(0,0,0,.4));
-  }
-  to{
-    filter:drop-shadow(0 30px 10px rgba(0,0,0,.3));
-  }
-}
-
-@keyframes hoverboard-scale{
-  from{
-    transform: scale3d(1, 1, 1);
-  }
-  to{
-    transform: scale3d(1.02, 1.02, 1.02);
-  }
-}
-
-@keyframes hoverboard-glow{
-  to{
-    filter: opacity(.7);
-  }
-}
-
-.score{
-  animation: hoverboard-shadow 1s ease-in-out alternate infinite;
-  will-change: transform;
-  transition: .5s all ease;
+h1{
   text-align: center;
-  flex: 1 0 10%;
-  margin: 30px 30px 0 30px;
-  position: relative;
-  &.winner{
-    h2{
-      filter:drop-shadow(0 8px 10px $color-blue);
-    }
-  }
-  &:after{
-    content: "";
-    position: absolute;
-    bottom: 0px;
-    width: 20px;
-    left: 50%;
-    transform: translate3d(-50%, 0, 0);
-    top: 0;
-    z-index: -1;
-  }
-  &:nth-of-type(2){
-    @include color-settings($color-orange, $color-orange-dark);
-    animation-delay: 1.2s;
-    .score-details, .score-details:after{animation-delay: 1.2s;}
-  }
-  &:nth-of-type(3){
-    @include color-settings($color-teal, $color-teal-dark);
-    animation-delay: 1.4s;
-    .score-details, .score-details:after{animation-delay: 1.4s;}
-  }
-  &:nth-of-type(4){
-    @include color-settings($color-violet, $color-violet-dark);
-    animation-delay: .8s;
-    .score-details, .score-details:after{animation-delay: .8s;}
-  }
-  &:nth-of-type(5){
-    @include color-settings($color-green, $color-green-dark);
-    animation-delay: .4s;
-    .score-details, .score-details:after{animation-delay: .4s;}
-  }
-  &:nth-of-type(6){
-    @include color-settings($color-blue, $color-blue-dark);
-    animation-delay: 1.6s;
-    .score-details, .score-details:after{animation-delay: 1.6s;}
-  }
-  &:nth-of-type(7){
-    @include color-settings($color-red, $color-red-dark);
-    animation-delay: 2s;
-    .score-details, .score-details:after{animation-delay: 2s;}
-  }
-  &:nth-of-type(8){
-    @include color-settings($color-yellow, $color-yellow-dark);
-    animation-delay: 1.8s;
-    .score-details, .score-details:after{animation-delay: 1.8s;}
-  }
+  text-transform: uppercase;
+  font-weight: $font-weight-light;
 }
 
-.score-details{
-  animation: hoverboard-scale 1s ease-in-out alternate infinite;
-  position: relative;
-  z-index: 2;
-  h1, h2, p{
-    margin: 0;
-    position: relative;
-  }
-  h1{
-    box-shadow: 0px 3px 6px -2px rgba(0,0,0,.38);
-    font-weight: $font-weight-bold;
-    font-size: $font-size-base * 1.6;
-    z-index: 3;
-    border-radius: 3px 3px 0 0;
-    line-height: 100px;
-    padding-bottom: 30px;
-  }
-  h2{
-    border-width: 4px;
-    border-style: solid;
-    width: 80px;
-    height: 80px;
-    line-height: 80px;
-    border-radius: 50%;
-    position: absolute;
-    left: 50%;
-    bottom: -40px;
-    transform: translate3d(-50%, 0, 0);
-    z-index: 4;
-    font-weight: $font-weight-bold;
-    font-size: $font-size-base * 3;
-    filter: drop-shadow(0 0px 0px $color-blue);
-    transition: 0.3s all ease;
-    span{
-      font-weight: $font-weight-light;
-      font-size: $font-size-base * 2;
-    }
-  }
-  p{
-    display: none;
-    line-height: 60px;
-    padding-bottom: 40px;
-    font-weight: $font-weight-bold;
-    z-index: 2;
-    font-size: $font-size-base * 1.6;
-    box-shadow: 0px 3px 6px -2px rgba(0,0,0,.38);
-    span{
-      font-weight: $font-weight-light;
-      font-size: $font-size-base;
-    }
-  }
-  &:after{
-    filter: opacity(1);
-    animation: hoverboard-glow 1s ease-in-out alternate infinite;
-    background-image: linear-gradient(rgba(255,255,255,.2), transparent 40%);
-    border-radius: 3px 3px 0 0;
-    content: "";
-    position: absolute;
-    top:2px;
-    bottom: 2px;
-    left:2px;
-    right: 2px;
-    z-index: 4;
-    mix-blend-mode: screen;
-  }
+small, sup{
+  font-size: .6em;
+  text-transform: uppercase;
+  font-weight: $font-weight-light;
+  line-height: 1em;
+}
+sup{
+  vertical-align: super;
+  font-size: .3em;
 }
 
-// DEV MODE ON:  Uncoment to stop animations
-// .container:before{ animation: none!important; transition: none!important; }
-// .container:after{ animation: none!important; transition: none!important; }
-// .score, .score-details, .score-details:after, .score-details h2{ animation: none!important; transition: none!important; }
+.leaderboard{
+  flex: 0 1 100%;
+  margin: 0 100px;
+  height: 640px;
+  padding: 0;
+  list-style: none;
+  z-index: 1;
+  position: relative;
+  > li{
+    transition: .5s ease all;
+    border-radius: 4px;
+    background: rgba(0,0,0,.2);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    position: absolute;
+  }
+}
+.position-1{ top: 0}
+.position-2{ top: 64px}
+.position-3{ top: 128px}
+.position-4{ top: 192px}
+.position-5{ top: 256px}
+.position-6{ top: 320px}
+.position-7{ top: 384px}
+.position-8{ top: 448px}
+.position-9{ top: 512px}
+.position-10{ top: 576px}
+
+.leaderboard-position{
+  box-shadow: 5px 0px 6px -3px rgba(0,0,0,.5);
+  flex: 1 0 80px;
+  text-align: center;
+  line-height: 60px;
+  font-size: $font-size-base * 2;
+  font-weight: $font-weight-extra-bold;
+}
+
+.leaderboard-details{
+  flex: 0 1 calc(45% - 20px);
+  padding-left: 20px;
+}
+
+.leaderboard-name{
+  font-size: $font-size-base * 1.3;
+  line-height: 1em;
+  padding-bottom: 5px;
+}
+
+.leaderboard-points{
+  font-size: $font-size-base * 2;
+  line-height: 1em;
+  font-weight: $font-weight-extra-bold;
+}
+
+.leaderboard-achievement{
+  padding: 0;
+  list-style: none;
+  flex: 1 0 60%;
+  display: flex;
+  li{
+    display: flex;
+    align-items: center;
+    padding-right: 40px;
+
+    &:nth-child(1){ color: $color-green;}
+    &:nth-child(2){ color: $color-yellow;}
+    &:nth-child(3){ color: $color-red;}
+    &:nth-child(4){ color: $color-violet;}
+    &.off{
+      color: rgba(255,255,255,.5)!important;
+    }
+    i{
+      margin-right: 10px;
+      font-size: $font-size-base * 3.5;
+    }
+    .legend{
+      line-height: 1em;
+      filter: opacity(60%);
+    }
+    strong{
+      display: block;
+      line-height: 1em;
+    }
+  }
+}
