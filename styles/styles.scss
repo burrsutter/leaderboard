@@ -32,6 +32,14 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
 }
 
+@keyframes change{
+  from{
+    background: #fff;
+  }
+  to{
+    background: rgba(0,0,0,.2);
+  }
+}
 html{
   height: 100%;
 }
@@ -57,7 +65,7 @@ h1{
 }
 
 small, sup{
-  font-size: .4em;
+  font-size: .5em;
   text-transform: uppercase;
   font-weight: $font-weight-light;
   line-height: 1em;
@@ -85,25 +93,28 @@ sup{
     align-items: center;
     align-content: center;
     position: absolute;
+    &.change{
+      animation: change .5s ease;
+    }
+    &.position-1, &:nth-child(1)   { top: 0}
+    &.position-2, &:nth-child(2)   { top: 64px}
+    &.position-3, &:nth-child(3)   { top: 128px}
+    &.position-4, &:nth-child(4)   { top: 192px}
+    &.position-5, &:nth-child(5)   { top: 256px}
+    &.position-6, &:nth-child(6)   { top: 320px}
+    &.position-7, &:nth-child(7)   { top: 384px}
+    &.position-8, &:nth-child(8)   { top: 448px}
+    &.position-9, &:nth-child(9)   { top: 512px}
+    &.position-10, &:nth-child(10) { top: 576px}
   }
 }
-.position-1{ top: 0}
-.position-2{ top: 64px}
-.position-3{ top: 128px}
-.position-4{ top: 192px}
-.position-5{ top: 256px}
-.position-6{ top: 320px}
-.position-7{ top: 384px}
-.position-8{ top: 448px}
-.position-9{ top: 512px}
-.position-10{ top: 576px}
 
 .leaderboard-position{
   box-shadow: 5px 0px 6px -3px rgba(0,0,0,.5);
   flex: 1 0 80px;
   text-align: center;
   line-height: 60px;
-  font-size: $font-size-base * 2;
+  font-size: $font-size-base * 2.8;
   font-weight: $font-weight-extra-bold;
 }
 
@@ -113,15 +124,16 @@ sup{
 }
 
 .leaderboard-name{
-  font-size: $font-size-base * 1.3;
+  font-size: $font-size-base * 1.2;
   line-height: 1em;
   padding-bottom: 5px;
+  font-weight: $font-weight-bold;
 }
 
 .leaderboard-points{
-  font-size: $font-size-base * 2;
+  font-size: $font-size-base * 1.6;
   line-height: 1em;
-  font-weight: $font-weight-extra-bold;
+  font-weight: $font-weight-light;
 }
 
 .leaderboard-achievement{
@@ -139,7 +151,7 @@ sup{
     &:nth-child(3){ color: $color-red;}
     &:nth-child(4){ color: $color-violet;}
     &.off{
-      color: rgba(255,255,255,.5)!important;
+      color: rgba(255,255,255,.1)!important;
     }
     i{
       margin-right: 10px;
