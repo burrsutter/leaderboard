@@ -25,7 +25,6 @@ $font-weight-extra-bold:    800;
 $font-size-base:            12px;
 $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-
 @keyframes hoverboard-glow{
   to{
     filter: opacity(.7);
@@ -70,6 +69,7 @@ small, sup{
   font-weight: $font-weight-light;
   line-height: 1em;
 }
+
 sup{
   vertical-align: super;
   font-size: .3em;
@@ -78,34 +78,24 @@ sup{
 .leaderboard{
   flex: 0 1 100%;
   margin: 0 100px;
-  height: 640px;
   padding: 0;
   list-style: none;
   z-index: 1;
   position: relative;
   > li{
-    will-change: position;
+//    will-change: position;
     transition: .5s ease all;
     border-radius: 4px;
     background: rgba(0,0,0,.2);
-    width: 100%;
+//    width: 100%;
     display: flex;
     align-items: center;
     align-content: center;
-    position: absolute;
+    margin-bottom: 2px;
+//    position: absolute;
     &.change{
       animation: change .5s ease;
     }
-    &.position-1, &:nth-child(1)   { top: 0}
-    &.position-2, &:nth-child(2)   { top: 64px}
-    &.position-3, &:nth-child(3)   { top: 128px}
-    &.position-4, &:nth-child(4)   { top: 192px}
-    &.position-5, &:nth-child(5)   { top: 256px}
-    &.position-6, &:nth-child(6)   { top: 320px}
-    &.position-7, &:nth-child(7)   { top: 384px}
-    &.position-8, &:nth-child(8)   { top: 448px}
-    &.position-9, &:nth-child(9)   { top: 512px}
-    &.position-10, &:nth-child(10) { top: 576px}
   }
 }
 
@@ -141,10 +131,10 @@ sup{
   list-style: none;
   flex: 1 0 60%;
   display: flex;
+  justify-content: space-around;
   li{
     display: flex;
     align-items: center;
-    padding-right: 40px;
 
     &:nth-child(1){ color: $color-green;}
     &:nth-child(2){ color: $color-yellow;}
