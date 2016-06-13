@@ -12,8 +12,8 @@ $color-green:               #92d400;
 $color-green-dark:          #2d7623;
 $color-yellow:              #f0ab00;
 $color-yellow-dark:         #b58100;
-$color-orange:              #f7bd7f;
-$color-orange-dark:         #b35c00;
+$color-orange:              #f6aa00;
+$color-orange-dark:         #f68100;
 $color-red:                 #ce0000;
 $color-red-dark:            #8b0000;
 $color-violet:              #a18fff;
@@ -140,6 +140,8 @@ sup{
     &:nth-child(2){ color: $color-yellow;}
     &:nth-child(3){ color: $color-red;}
     &:nth-child(4){ color: $color-violet;}
+    &:nth-child(5){ color: $color-orange-dark;}
+    &:nth-child(6){ color: $color-blue;}
     &.off{
       color: rgba(255,255,255,.1)!important;
     }
