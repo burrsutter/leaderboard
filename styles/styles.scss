@@ -37,8 +37,10 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   to{
     background: rgba(0,0,0,.2);
+    transform: rotateX(360deg);
   }
 }
+
 html{
   height: 100%;
 }
@@ -94,7 +96,7 @@ sup{
     margin-bottom: 2px;
 //    position: absolute;
     &.change{
-      animation: change .5s ease;
+      animation: change 1s ease;
     }
   }
 }
@@ -140,10 +142,19 @@ sup{
     &:nth-child(2){ color: $color-yellow;}
     &:nth-child(3){ color: $color-red;}
     &:nth-child(4){ color: $color-violet;}
-    &:nth-child(5){ color: $color-orange-dark;}
-    &:nth-child(6){ color: $color-blue;}
+    &:nth-child(5){ color: $color-blue;}
+    &:nth-child(6){ color: $color-orange-dark;}
+    &:nth-child(7){ color: $color-orange;}
+    img{
+      max-height:45px;
+      margin-right:10px;
+      filter: opacity(100%);
+    }
     &.off{
       color: rgba(255,255,255,.1)!important;
+      img{
+        filter:opacity(25%);
+      }
     }
     i{
       margin-right: 10px;
