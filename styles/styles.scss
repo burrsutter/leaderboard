@@ -37,7 +37,7 @@ $easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55);
   }
   to{
     background: rgba(0,0,0,.2);
-    transform: rotateX(360deg);
+    transform: rotate3d(1,0,0,360deg);
   }
 }
 
@@ -96,7 +96,7 @@ sup{
     margin-bottom: 2px;
 //    position: absolute;
     &.change{
-      animation: change 1s ease;
+      animation: change 1s ease infinite;
     }
   }
 }
