@@ -16,7 +16,6 @@ $color-orange:              #f6aa00;
 $color-orange-dark:         #ec7a08;
 $color-red:                 #ce0000;
 $color-red-dark:            #8b0000;
-$color-red-text:            #ff1919;
 $color-violet:              #a18fff;
 $color-violet-dark:         #582fc0;
 $font-weight-light:         300;
@@ -140,14 +139,10 @@ sup{
     align-items: center;
 
     &:nth-child(1){ color: $color-green;}
-    &:nth-child(2){ color: $color-yellow;}
-    &:nth-child(3){ color: $color-red;
-      .legend{
-        color:$color-red-text;
-      }
-    }
-    &:nth-child(4){ color: $color-violet;}
-    &:nth-child(5){ color: $color-blue;}
+    &:nth-child(2){ color: $color-teal;}
+    &:nth-child(3){ color: $color-yellow;}
+    &:nth-child(4){ color: $color-blue;}
+    &:nth-child(5){ color: $color-violet;}
     &:nth-child(6){ color: $color-orange-dark;}
     &:nth-child(7){ color: $color-orange;}
     img{
@@ -157,6 +152,7 @@ sup{
     }
     &.off{
       color: rgba(255,255,255,.1)!important;
+      transition: 1s ease-in;
       img{
         filter:opacity(25%);
       }
