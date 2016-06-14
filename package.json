@@ -18,9 +18,7 @@
     "watch": "npm run watch-ify & npm run watch-css",
     "start": "npm run watch-ify & npm run watch-css & npm run bs-sync"
   },
-  "Dependencies": {
-
-  },
+  "Dependencies": {},
   "devDependencies": {
     "autoprefixer": "latest",
     "browser-sync": "latest",
@@ -33,5 +31,9 @@
     "postcss-cli": "2.x",
     "uglifyjs": "latest",
     "watchify": "3.x"
+  },
+  "dependencies": {
+    "ractive": "^0.7.3",
+    "reconnectingwebsocket": "^1.0.0"
   }
 }
