@@ -42,9 +42,9 @@ var fake_leaders = [
             "streak5": true,
             "streak10": true,
             "streak15": true,
-            "streak50": false,
-            "streak100": false,
-            "streak300": false,
+            "points50": false,
+            "points100": false,
+            "points300": false,
             "snitch": false
         }
     },
@@ -55,9 +55,9 @@ var fake_leaders = [
             "streak5": true,
             "streak10": false,
             "streak15": false,
-            "streak50": false,
-            "streak100": false,
-            "streak300": false,
+            "points50": false,
+            "points100": false,
+            "points300": false,
             "snitch": true
         }
     },
