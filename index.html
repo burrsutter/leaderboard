@@ -12,7 +12,7 @@
 <script id="template-leaderboard" type="text/ractive">
     <ol class="leaderboard">
     {{#each leaders:rank}}
-      <li class="{{ change }}">
+      <li class="{{ changed ? 'change' : '' }}">
         <div class="leaderboard-position">
           {{ rank+1 }}<sup>{{ suffixes[rank] }}</sup>
         </div>

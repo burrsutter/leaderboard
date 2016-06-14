@@ -1,5 +1,7 @@
 'use strict';
 
+var CHANGE_ANIMATION_DURATION = 1000; // ms
+
 //imports
 var Ractive = require('ractive');
 var ReconnectingWebSocket = require('reconnectingwebsocket');
@@ -12,6 +14,18 @@ var ractive = new Ractive({
         leaders: [],
         suffixes: suffixes,
     },
+});
+
+window.ractive = ractive; // for debugging
+
+
+ractive.observe('leaders.*.name', function (newValue, oldValue, keypath, i, key) {
+    // this leader changed, triggers a css anim
+    ractive.set(`leaders[${i}].changed`, true);
+    // remove changed flag after anim has ended
+    setTimeout(function removeChanged() {
+        ractive.set(`leaders[${i}].changed`, false);
+    }, CHANGE_ANIMATION_DURATION);
 });
 
 function setLeaders(leaders) {
