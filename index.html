@@ -18,50 +18,50 @@
         </div>
         <div class="leaderboard-details">
           <div class="leaderboard-name">
-            {{ leaders[rank].name }}
+            {{ leaders[rank].username }}
           </div>
           <div class="leaderboard-points">
             {{ leaders[rank].score }} <small>points</small>
           </div>
         </div>
         <ul class="leaderboard-achievement">
-          <li class="{{ leaders[rank].cheeves.streak5 ? '' : 'off' }}">
+          <li class="{{ leaders[rank].achievements.pops3 ? '' : 'off' }}">
             <i class="material-icons">sentiment_very_satisfied</i>
             <div class="legend">
-              <strong>5</strong> pops
+              <strong>3</strong> pops
             </div>
           </li>
-          <li class="{{ leaders[rank].cheeves.streak10 ? '' : 'off' }}">
+          <li class="{{ leaders[rank].achievements.pops1 ? '' : 'off' }}">
             <i class="material-icons">local_play</i>
             <div class="legend">
               <strong>10</strong> pops
             </div>
           </li>
-          <li class="{{ leaders[rank].cheeves.streak15 ? '' : 'off' }}">
+          <li class="{{ leaders[rank].achievements.pops2 ? '' : 'off' }}">
             <i class="material-icons">whatshot</i>
             <div class="legend">
               <strong>15</strong> pops
             </div>
           </li>
-          <li class="{{ leaders[rank].cheeves.points50 ? '' : 'off' }}">
+          <li class="{{ leaders[rank].achievements.points1 ? '' : 'off' }}">
             <i class="material-icons">star_border</i>
             <div class="legend">
-              <strong>50</strong> points
+              <strong>10</strong> points
             </div>
           </li>
-          <li class="{{ leaders[rank].cheeves.points100 ? '' : 'off' }}">
+          <li class="{{ leaders[rank].achievements.points3 ? '' : 'off' }}">
             <i class="material-icons">star_half</i>
             <div class="legend">
               <strong>100</strong> points
             </div>
           </li>
-          <li class="{{ leaders[rank].cheeves.points300 ? '' : 'off' }}">
+          <li class="{{ leaders[rank].achievements.points2 ? '' : 'off' }}">
             <i class="material-icons">star</i>
             <div class="legend">
               <strong>300</strong> points
             </div>
           </li>
-          <li class="{{ leaders[rank].cheeves.snitch ? '' : 'off' }}">
+          <li class="{{ leaders[rank].achievements.gold ? '' : 'off' }}">
             <img src="/img/golden.png" />
             <div class="legend">
               <strong>Golden Snitch</strong>

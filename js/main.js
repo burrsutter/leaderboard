@@ -6,6 +6,7 @@ var CHANGE_ANIMATION_DURATION = 1000; // ms
 var Ractive = require('ractive');
 var ReconnectingWebSocket = require('reconnectingwebsocket');
 var suffixes = require('./nth-suffix');
+var _ = require('lodash');
 
 var ractive = new Ractive({
     el: document.body,
@@ -29,7 +30,8 @@ ractive.observe('leaders.*.name', function (newValue, oldValue, keypath, i, key)
 });
 
 function setLeaders(leaders) {
-    ractive.set('leaders', leaders);
+    var sorted_leaders = _.sortBy(leaders, 'score').reverse();
+    ractive.set('leaders', sorted_leaders);
 }
 
 /*--- websocket init and handlers ---*/
@@ -46,36 +48,3 @@ ws.onmessage = function wsMessage(msg) {
         console.error(e);
     }
 };
-
-/*--- set fake data initially ---*/
-
-var fake_leaders = [
-    {
-        "name": "Mercury Slice",
-        "score": 2729,
-        "cheeves": {
-            "streak5": true,
-            "streak10": true,
-            "streak15": true,
-            "points50": false,
-            "points100": false,
-            "points300": false,
-            "snitch": false
-        }
-    },
-    {
-        "name": "Platinum Serrano",
-        "score": 1929,
-        "cheeves": {
-            "streak5": true,
-            "streak10": false,
-            "streak15": false,
-            "points50": false,
-            "points100": false,
-            "points300": false,
-            "snitch": true
-        }
-    },
-];
-
-setLeaders(fake_leaders);
