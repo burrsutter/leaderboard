@@ -20,7 +20,7 @@ var ractive = new Ractive({
 window.ractive = ractive; // for debugging
 
 
-ractive.observe('leaders.*.name', function (newValue, oldValue, keypath, i, key) {
+ractive.observe('leaders.*.username', function (newValue, oldValue, keypath, i, key) {
     // this leader changed, triggers a css anim
     ractive.set(`leaders[${i}].changed`, true);
     // remove changed flag after anim has ended
