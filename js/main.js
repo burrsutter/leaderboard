@@ -43,7 +43,9 @@ ws.onclose = function wsClose() { console.log('websocket connection closed'); };
 ws.onmessage = function wsMessage(msg) {
     try {
         var payload = JSON.parse(msg.data);
-        setLeaders(payload);
+        if (payload.length) {
+            setLeaders(payload);
+        }
     } catch (e) {
         console.error(e);
     }
