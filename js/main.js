@@ -1,6 +1,6 @@
 'use strict';
 
-var CHANGE_ANIMATION_DURATION = 1000; // ms
+var CHANGE_ANIMATION_DURATION = 20; // ms
 
 //imports
 var Ractive = require('ractive');
@@ -8,24 +8,30 @@ var ReconnectingWebSocket = require('reconnectingwebsocket');
 var suffixes = require('./nth-suffix');
 var _ = require('lodash');
 
+var data = {
+    leaders: [],
+    suffixes: suffixes,
+};
+
 var ractive = new Ractive({
     el: document.body,
     template: document.querySelector('#template-leaderboard').textContent,
-    data: {
-        leaders: [],
-        suffixes: suffixes,
-    },
+    data: data,
 });
 
 window.ractive = ractive; // for debugging
+window.data = data;
 
 
 ractive.observe('leaders.*.username', function (newValue, oldValue, keypath, i, key) {
     // this leader changed, triggers a css anim
-    ractive.set(`leaders[${i}].changed`, true);
+    ractive.set(`leaders[${i}].changed`, false);
+    var timeStart = (new Date()).getTime();
     // remove changed flag after anim has ended
     setTimeout(function removeChanged() {
-        ractive.set(`leaders[${i}].changed`, false);
+        ractive.set(`leaders[${i}].changed`, true);
+        var timeEnd = (new Date()).getTime();
+        console.log(`.change removed after ${timeEnd - timeStart} ms`);
     }, CHANGE_ANIMATION_DURATION);
 });
 
