@@ -112,18 +112,19 @@ sup{
 .leaderboard-details{
   flex: 0 1 calc(45% - 20px);
   padding-left: 20px;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  font-size: $font-size-base * 2;
 }
 
 .leaderboard-name{
-  font-size: $font-size-base * 1.2;
-  line-height: 1em;
-  padding-bottom: 5px;
   font-weight: $font-weight-bold;
+  margin-right: 10px;
+  flex: 0 0 45%;
 }
 
 .leaderboard-points{
-  font-size: $font-size-base * 1.6;
-  line-height: 1em;
   font-weight: $font-weight-light;
 }
 
